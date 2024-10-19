@@ -1,1 +1,59 @@
+Docker images are the blueprints for creating containers. They contain everything needed
+to run an application: the code, libraries, environment variables, and configuration files.
+Images are read-only and can be stacked on top of one another to create new images.
+
+Common Commands for docker images
+Here’s a list of commands related to managing Docker images along with their flags:
+
+1. docker images
+This command lists all images on the local machine.
+
+Common Flags:
+
+-a: Show all images (default shows just the latest tagged images).
+-q: Only display image IDs.
+--filter: Filter output based on conditions (e.g., --filter dangling=true).
+--format: Format the output using a Go template.
+2. docker pull
+This command downloads an image from a registry.
+
+Common Flags:
+
+--all-tags: Download all tags of the image.
+--disable-content-trust: Skip image signing verification.
+3. docker rmi
+This command removes one or more images.
+
+Common Flags:
+
+-f: Force removal of the image.
+--no-prune: Do not delete untagged parent images.
+4. docker tag
+This command creates a new tag for an image.
+
+Common Flags:
+
+No additional flags; usage is straightforward: docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG].
+5. docker inspect
+This command returns detailed information about an image.
+
+Common Flags:
+
+--format: Format the output using a Go template.
+6. docker save
+This command saves an image to a tar archive.
+
+Common Flags:
+
+-o: Specify the output file name (e.g., -o my_image.tar).
+7. docker load
+This command loads an image from a tar archive.
+
+Common Flags:
+
+-i: Specify the input file name (e.g., -i my_image.tar).
+Example Usage
+Here’s an example of using the docker images command:
+
+docker images -a --filter dangling=false
 
