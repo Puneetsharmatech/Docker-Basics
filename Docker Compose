@@ -1,3 +1,70 @@
 There is one command in which you can link your web server container with DB container to run the application. with linking it gives an error.
    docker run --links 
    E:g docker run -d --name=vote -p 5000:80 --links redis:redis voting-app
+
+
+Docker Compose is a tool used to define and manage multi-container Docker applications. It allows you to configure your application services in a docker-compose.yml file, making it easier to deploy and manage complex applications.
+
+Here are the main commands you can use with Docker Compose:
+
+Common Docker Compose Commands
+docker-compose up
+Starts the containers defined in the docker-compose.yml file.
+Flags:
+-d: Run in detached mode (in the background).
+--build: Build images before starting the containers.
+--force-recreate: Recreate containers even if their configuration hasn’t changed.
+--remove-orphans: Remove containers for services not defined in the Compose file.
+docker-compose down
+Stops and removes the containers, networks, and volumes created by docker-compose up.
+Flags:
+--volumes: Remove named volumes declared in the volumes section of the Compose file.
+--remove-orphans: Remove containers for services not defined in the Compose file.
+docker-compose ps
+Lists the containers managed by the current docker-compose project.
+Flags:
+-q: Only display container IDs.
+docker-compose build
+Builds or rebuilds services defined in the docker-compose.yml file.
+Flags:
+--no-cache: Do not use cache when building the images.
+--force-rm: Always remove intermediate containers.
+docker-compose logs
+Displays logs from the containers.
+Flags:
+-f: Follow log output.
+--tail: Show a specific number of lines from the end of logs.
+docker-compose exec
+Executes a command in a running container.
+Flags:
+-d: Run the command in detached mode.
+-it: Run the command in interactive mode.
+docker-compose stop
+Stops the running containers without removing them.
+docker-compose start
+Starts stopped services.
+docker-compose restart
+Restarts services.
+docker-compose rm
+Removes stopped service containers.
+Flags:
+-f: Force removal without confirmation.
+-v: Remove associated volumes.
+docker-compose pull
+Pulls the latest images for the services defined in the docker-compose.yml.
+docker-compose push
+Pushes the service images to a registry.
+docker-compose config
+Validates and displays the Compose file.
+Example Usage
+To start your application with Docker Compose, you might run:
+
+
+docker-compose up -d
+To stop and remove all containers and networks, you could use:
+
+
+docker-compose down --volumes
+
+
+
