@@ -1,1 +1,38 @@
+The docker run command is used to create and start a new container from a specified Docker image.
+It combines several functionalities, allowing you to configure the container's environment, networking,
+and volumes while launching it.
 
+Here’s a breakdown of the docker run command along with its flags:
+
+Basic Syntax
+
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+Common Flags for docker run
+-d: Run the container in detached mode (in the background).
+--name: Assign a name to the container.
+-p: Publish a container’s port(s) to the host (e.g., -p hostPort:containerPort).
+-e: Set environment variables in the container (e.g., -e VAR=value).
+-v: Bind mount a volume (e.g., -v /host/path:/container/path).
+--rm: Automatically remove the container when it exits.
+-it: Run the container in interactive mode with a terminal (combines -i and -t).
+-m: Set memory limit (e.g., -m 512m).
+--network: Specify a network for the container to connect to.
+--restart: Specify the restart policy (e.g., --restart unless-stopped).
+--env-file: Read environment variables from a file.
+--cpus: Limit the number of CPUs (e.g., --cpus="1.5").
+--gpus: Specify the GPU resource allocation (requires Docker with GPU support).
+--label: Set metadata for the container (e.g., --label key=value).
+--privileged: Give extended privileges to the container.
+--user: Specify the username or UID and optionally the group or GID to use when running the container.
+--workdir: Set the working directory inside the container (e.g., --workdir /app).
+Example Usage
+Here’s an example of using docker run with several flags:
+
+docker run -d --name my_container -p 8080:80 -e ENV_VAR=value -v /host/path:/container/path my_image
+This command will:
+
+Run my_image as a detached container named my_container.
+Map port 8080 on the host to port 80 in the container.
+Set an environment variable ENV_VAR to value.
+Bind mount /host/path from the host to /container/path in the container.
+These flags allow you to customize the behavior of the container as needed.
