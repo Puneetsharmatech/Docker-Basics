@@ -1,1 +1,74 @@
 
+1. docker run
+This command creates and starts a container.
+
+Common Flags:
+
+-d: Run the container in detached mode (in the background).
+-p: Publish a container’s port(s) to the host (e.g., -p 8080:80).
+--name: Assign a name to the container.
+-e: Set environment variables (e.g., -e VAR=value).
+-v: Bind mount a volume (e.g., -v /host/path:/container/path).
+--rm: Automatically remove the container when it exits.
+2. docker ps
+This command lists running containers.
+
+Common Flags:
+
+-a: Show all containers (default shows just running).
+-q: Only display container IDs.
+--format: Format the output using a Go template.
+3. docker build
+This command builds an image from a Dockerfile.
+
+Common Flags:
+
+-t: Tag the image (e.g., -t myimage:latest).
+-f: Specify a Dockerfile (e.g., -f /path/to/Dockerfile).
+--no-cache: Build without using cache.
+4. docker images
+This command lists images on the local machine.
+
+Common Flags:
+
+-q: Only display image IDs.
+--filter: Filter output based on conditions (e.g., --filter dangling=true).
+5. docker rmi
+This command removes one or more images.
+
+Common Flags:
+
+-f: Force removal of the image.
+--no-prune: Do not delete untagged parent images.
+6. docker exec
+This command runs a command in a running container.
+
+Common Flags:
+
+-it: Run the command in interactive mode with a terminal.
+-d: Run the command in the background.
+7. docker stop
+This command stops a running container.
+
+Common Flags:
+
+-t: Set a timeout (in seconds) for the container to stop.
+8. docker rm
+This command removes one or more stopped containers.
+
+Common Flags:
+
+-f: Force removal of a running container (it will be stopped first).
+-v: Remove the volumes associated with the container.
+9. docker pull
+This command downloads an image from a registry.
+
+Common Flags:
+
+--all-tags: Download all tags of the image.
+10. docker push
+This command uploads an image to a registry.
+
+Common Flags:
+
+--disable-content-trust: Skip image signing verification.
