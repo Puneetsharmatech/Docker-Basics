@@ -1,1 +1,13 @@
+Docker is a platform that allows you to create, deploy, and run applications in containers.
+Containers are lightweight, portable, and contain everything needed to run a piece of software,
+including the code, libraries, and dependencies. This means you can easily move applications between
+different environments without worrying about compatibility issues.
 
+The main difference between Docker containers and virtual machines (VMs) is how they operate.
+
+Containers share the host system’s operating system kernel, which makes them much more efficient
+and faster to start up. They are like lightweight boxes that can run multiple applications on the 
+same OS.
+
+Virtual Machines, on the other hand, include a full operating system along with the application. 
+Each VM runs on its own virtualized hardware, which makes them heavier and slower to boot.
