@@ -1,1 +1,22 @@
 
+Container Orchestration
+Container orchestration is the automated management of containerized applications across a cluster of machines. It involves deploying, scaling, and managing containerized applications to ensure they run efficiently and reliably. Orchestration tools help automate tasks such as load balancing, scaling up or down based on demand, and managing service discovery.
+
+Introduction to Kubernetes
+Kubernetes (often abbreviated as K8s) is an open-source container orchestration platform originally developed by Google. It provides a robust framework for managing containerized applications in a clustered environment. Key features of Kubernetes include:
+
+Automated Deployment: Automatically deploys containers across a cluster.
+Scaling: Easily scales applications up or down based on demand.
+Load Balancing: Distributes network traffic to ensure application stability.
+Self-Healing: Restarts failed containers, replaces them, and kills containers that don’t respond to health checks.
+Service Discovery: Automatically assigns IP addresses and a single DNS name for a set of containers.
+
+
+Introduction to Docker Swarm
+Docker Swarm is Docker’s native clustering and orchestration tool. It allows you to manage a cluster of Docker engines as a single virtual system. Key features of Docker Swarm include:
+
+Simple Setup: Easy to set up for users already familiar with Docker.
+Load Balancing: Distributes requests to different containers.
+Scaling: Allows for easy scaling of services up or down.
+Integrated with Docker: Works seamlessly with Docker CLI and Compose files.
+
