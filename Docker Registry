@@ -1,1 +1,56 @@
 
+A Docker registry is a service that stores Docker images. It allows you to upload, download, and manage your Docker images, making it easier to share and deploy containerized applications. The default public registry is Docker Hub, but you can also set up private registries using tools like Docker Registry.
+
+Key Docker Registry Commands
+Below are some essential commands related to Docker registries, including how to work with images and manage a Docker registry.
+
+Working with Docker Images
+
+Login to a Docker Registry
+bash
+Copy code
+docker login [REGISTRY_URL]
+Push an Image to the Registry
+bash
+Copy code
+docker push [REGISTRY_URL]/[IMAGE_NAME]:[TAG]
+Pull an Image from the Registry
+bash
+Copy code
+docker pull [REGISTRY_URL]/[IMAGE_NAME]:[TAG]
+List Images in the Local Registry
+bash
+Copy code
+docker images
+Tag an Image for the Registry
+bash
+Copy code
+docker tag [LOCAL_IMAGE_NAME]:[TAG] [REGISTRY_URL]/[IMAGE_NAME]:[TAG]
+Remove a Local Image
+bash
+Copy code
+docker rmi [IMAGE_NAME]:[TAG]
+Setting Up and Managing a Local Docker Registry
+
+If you're running a local Docker registry, here are some commands to help you manage it:
+
+Run a Local Docker Registry
+
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
+Push an Image to the Local Registry
+
+docker tag [LOCAL_IMAGE_NAME]:[TAG] localhost:5000/[IMAGE_NAME]:[TAG]
+docker push localhost:5000/[IMAGE_NAME]:[TAG]
+Pull an Image from the Local Registry
+
+docker pull localhost:5000/[IMAGE_NAME]:[TAG]
+List All Images in the Local Registry To list images, you usually need to use a web interface or API, as Docker CLI does not provide a direct command to list images in a registry. You can access the registry API:
+
+curl http://localhost:5000/v2/_catalog
+Remove an Image from the Local Registry To remove an image, you generally need to delete the tag:
+
+curl -X DELETE http://localhost:5000/v2/[IMAGE_NAME]/manifests/[DIGEST]
+You can find the digest using:
+
+
+curl http://localhost:5000/v2/[IMAGE_NAME]/tags/list
