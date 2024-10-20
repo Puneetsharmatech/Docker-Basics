@@ -1,1 +1,53 @@
 
+Docker Networking is a feature that allows containers to communicate with each other and with external systems. Docker provides several networking options to facilitate different types of communication, including bridge networks, host networks, overlay networks, and more.
+
+Common Docker Networking Commands
+Here are the key commands related to Docker networking:
+
+1. List Networks
+
+
+docker network ls
+Lists all Docker networks on the host.
+2. Create a Network
+
+
+docker network create NETWORK_NAME
+Creates a new user-defined network.
+3. Inspect a Network
+
+
+docker network inspect NETWORK_NAME
+Displays detailed information about a specific network, including connected containers.
+4. Remove a Network
+
+
+docker network rm NETWORK_NAME
+Removes a specified network. Ensure no containers are using it.
+5. Connect a Container to a Network
+
+
+docker network connect NETWORK_NAME CONTAINER_NAME
+Connects an existing container to a specified network.
+6. Disconnect a Container from a Network
+
+
+docker network disconnect NETWORK_NAME CONTAINER_NAME
+Disconnects a container from a specified network.
+7. Create a Network with Specific Options
+
+
+docker network create --driver DRIVER_NAME NETWORK_NAME
+Creates a network with a specific driver (e.g., bridge, overlay).
+8. List Connected Containers
+
+
+docker network inspect NETWORK_NAME
+Shows which containers are connected to a specific network.
+Example Usage
+Create a Bridge Network:
+
+docker network create my_bridge
+Run a Container on a Specific Network:
+
+docker run --network my_bridge --name my_container IMAGE_NAME
